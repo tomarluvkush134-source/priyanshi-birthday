@@ -1,32 +1,87 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Happy Birthday ❤️</title>
-  <style>
-    body {
-      margin: 0;
-      background: #ffd6e8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-      overflow: hidden;
-    }
-    h1 {
-      font-size: 32px;
-      color: #ff2f6e;
-      animation: fadeIn 2s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.8); }
-      to { opacity: 1; transform: scale(1); }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: #ffd6e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.page {
+  display: none;
+  text-align: center;
+}
+
+.page.active {
+  display: block;
+}
+
+button {
+  padding: 12px 22px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  background: hotpink;
+  color: white;
+  cursor: pointer;
+}
+</style>
 </head>
+
 <body>
 
-<h1>🎉 Happy Birthday My Love 💖🎂</h1>
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <h2>🎉 Happy Birthday My Love 💖🎂</h2>
+  <br>
+  <button onclick="nextPage()">Next 💕</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <h2>🎈 Make a Wish 🎈</h2>
+  <p>Your smile makes my world brighter ✨</p>
+  <br>
+  <button onclick="nextPage()">Cut the Cake 🎂</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+  <h2>🎂 Cake Cutting Time 🎆</h2>
+  <p>May all your dreams come true 💝</p>
+  <br>
+  <button onclick="nextPage()">Open Message 💌</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+  <h2>💌 For You</h2>
+  <p>
+    You are the most special part of my life.<br>
+    I wish you happiness, love and endless smiles 💖
+  </p>
+</div>
+
+<script>
+let current = 1;
+
+function nextPage() {
+  document.getElementById("page" + current).classList.remove("active");
+  current++;
+  document.getElementById("page" + current).classList.add("active");
+}
+</script>
 
 </body>
-</html>
+  </html>
